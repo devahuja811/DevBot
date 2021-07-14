@@ -6,9 +6,7 @@ const ytdl = require("ytdl-core");
 const client = new Discord.Client();
 
 client.login(process.env.TOKEN);
-// client.on("guildMemberAdd", function(Member){
-//     client
-// })
+
 client.on("message", async (message) => {
   let connection;
   if (message.author.bot) return;
