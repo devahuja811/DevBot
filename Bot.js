@@ -12,7 +12,7 @@ client.login(process.env.TOKEN);
 client.on("message", async (message) => {
   let connection;
   if (message.author.bot) return;
-  if (message.content == "Bruh") {
+  if (message.content.toLowerCase() == "bruh" ) {
     return message.channel.send("Bruh to you too");
   }
   if (message.content.toLowerCase() == "join") {
@@ -27,7 +27,9 @@ client.on("message", async (message) => {
     connection.play(ytdl(message.content.slice(5)));
   }
   if (message.content.toLowerCase() == "disconnect") {
-    connection.dispatcher.destroy();
+    if(connection.dispatcher){
+        connection.dispatcher.destroy();
+    };
     connection.disconnect();
   }
   if (message.content.toLowerCase().startsWith("find")) {
