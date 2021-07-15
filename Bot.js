@@ -25,6 +25,9 @@ client.on("message", async (message) => {
     connection.play(ytdl(message.content.slice(5)));
   }
   if (message.content.toLowerCase() == "disconnect") {
+    client.voiceclient.on('disconnect', (event) => {
+      console.log(event);
+    });
     if(connection.dispatcher){
         connection.dispatcher.destroy();
     };
