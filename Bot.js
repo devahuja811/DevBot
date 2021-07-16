@@ -17,6 +17,9 @@ client.on("message", async (message) => {
     if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
     }
+    else {
+      message.channel.send("Bruh join a vc first yourself");
+    }
   }
   if (message.content.toLowerCase().startsWith("play")) {
     if (!connection) {
