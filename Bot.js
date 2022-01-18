@@ -10,15 +10,15 @@ client.login(process.env.TOKEN);
 client.on("message", async (message) => {
   let connection;
   if (message.author.bot) return;
-  if (message.content.toLowerCase() == "bruh" ) {
-    return message.channel.send("Bruh to you too");
+  if (message.content.toLowerCase() == "Greetings" ) {
+    return message.channel.send("Greetings to you too");
   }
   if (message.content.toLowerCase() == "join") {
     if (message.member.voice.channel) {
       connection = await message.member.voice.channel.join();
     }
     else {
-      message.channel.send("Bruh join a vc first yourself");
+      message.channel.send("You are not in a voice channel");
     }
   }
   if (message.content.toLowerCase().startsWith("play")) {
